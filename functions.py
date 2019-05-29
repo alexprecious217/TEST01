@@ -22,7 +22,7 @@ print(fahren_list)
 number1 = int(input("enter numbers"))
 number2 = int(input("enter numbers"))
 number3 = int(input("enter numbers"))
-number4 =int(input("enter numbers"))
+number4 = int(input("enter numbers"))
 number5 = int(input("enter numbers"))
 
 number = number1 + number2 + number3 + number4 + number5
@@ -33,9 +33,8 @@ print(new_number)
 def average():
     list = []
     sum = 0
-
     x=0
-    while len(list) <= 3 :
+    while len(list) <= 3:
         item = float(input("enter a number"))
         list.append(item)
         x += 1
@@ -127,7 +126,7 @@ def average(num1, *param):
 
 print(average(2, 3, 4, 5, 6, 7))
 print(average(2, 3, 4))
-'''
+
 
 #Recursive Functions:
 
@@ -135,22 +134,109 @@ def factorial(n):
     if n == 1:
         return 1
     else:
-        r = 0
-        r+=1
         s = n * factorial(n-1)
         while True:
-            print(f"The {n}th factorial is {s}")
+            print(f"The {n-1}th factorial is {s}")
             return s
 
 
 
-
-print(factorial(5))
-
+print(factorial(7))
 
 
+space = " "
+for bum in range(5):
+    output = ''
+    print(f"{output * 5}  blah balh blah")
+
+
+#28/05/19
+def factorial(n):
+    print(f"factorial has been called with n= " + str(n))
+    if n == 1:
+        return 1
+    else:
+        result = n*factorial(n-1)
+    print(f"the immediate result for {n}: {result}")
+    return result
+
+
+factorial(5)
+
+def while_factorial(n):
+    res = 1
+    i=0
+    while(i<n):
+        i+=1
+        res *= i
+    return res
+
+
+print(while_factorial(6))
+
+def for_factorial(n):
+    res = 1
+    for i in range(2, n+1):
+        res *= i
+    return  res
+
+print(for_factorial(6))
 
 
 
+#To return the nth fibonacci series
+def fib(n):
+    n1 = 0
+    n2 = 1
+    count = 0
+#check if the number of terms is valid
+    if n_term <= 0:
+        print("Please enter a positive integer.")
+    elif n_term == 1:
+        print("Fibonacci sequence up to", n_term, ":")
+        print(n1)
+    else:
+        print("Fibonacci sequence up to", n_term, ":")
+        while count < n_term:
+            print(n1, end=",")
+            nth = n1 + n2
+    #To update the value
+            n1 = n2
+            n2 = nth
+            count += 1
 
 
+
+n_term = int(input("Please input the nth term: "))
+fib(n_term)
+
+#returning the nth fibonacci number
+#Using the recursive method
+import time
+t2=time.time()
+def fib(n):
+    if n==0:
+        return 0
+    elif n==1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+
+print(fib(7))
+'''
+
+import time
+t1=time.time()
+#Using the iterative method
+def fib_iterative(n):
+    old, new = 0, 1
+    if n==0:
+        return 0
+    for i in range(n-1):
+        old, new = new, old+new
+    return new
+
+
+print(fib_iterative(9))
+print(time.time())

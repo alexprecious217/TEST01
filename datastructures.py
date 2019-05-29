@@ -109,7 +109,7 @@ print(yor_ibo[(en_yor['One'])])
 print(yor_ibo[en_yor['Two']])
 
 
-#Rules or using dictionaries. We cant use mutable types as keys. A mutable of data is a type of data that can be changed, eg, lists.
+#Rules or using dictionaries. We cant use mutable types as keys. A mutable type of data is a type of data that can be changed, eg, lists.
 #dic = {[1,2,3]:'abc'}
 dic = {'abc':[1,2,3]}
 
